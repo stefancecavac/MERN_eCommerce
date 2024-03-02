@@ -4,7 +4,7 @@ import authentication from '../middleware/authentication.js'
 
 const router = express.Router()
 
-router.use(authentication)
+//router.use(authentication)
 router.get('/',getAllProducts)
 router.get('/:id',getSingleProduct)
 router.post('/',postProduct)
