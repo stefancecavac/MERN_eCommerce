@@ -22,7 +22,7 @@ const Home = () => {
     return(
         <div className="grid grid-cols-3 gap-5 m-5">
             {products && products.map((product) => (
-            <Link  key={product._id}  >  <ProductCard product={product}></ProductCard></Link> 
+            <Link to={`/recipes/${product._id}`} key={product._id}  >  <ProductCard product={product}></ProductCard></Link> 
             ))}
         </div>
     )

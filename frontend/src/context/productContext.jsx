@@ -10,6 +10,10 @@ export const ProductReducer = (state, action) => {
             return {
                 products: action.payload
             }
+        case 'SET_SINGLE_PRODUCT':
+            return {
+                singleProduct: action.payload
+            }
         case 'POST_PRODUCT':
             return {
                 products: [action.payload, ...state.products]
@@ -24,11 +28,12 @@ export const ProductReducer = (state, action) => {
 
 export const ProductContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(ProductReducer, {
-        products: []
+        products: [],
+        singleProduct:[]
     })
     console.log(state)
-    return(
-        <ProductContext.Provider value={{...state , dispatch}}>
+    return (
+        <ProductContext.Provider value={{ ...state, dispatch }}>
             {children}
         </ProductContext.Provider>
     )
